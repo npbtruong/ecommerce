@@ -12,7 +12,7 @@ class AuthController extends Controller
     //
     public function login_admin()
     {
-        //password
+        // admin@admin.com password
         if(!empty(Auth::check()) && Auth::user()->is_admin == 1)
         {
             return redirect('admin/dashboard');
