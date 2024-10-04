@@ -56,6 +56,26 @@
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
+              <form action="{{ url('admin/admin/temp') }}" method="post">
+                {{ csrf_field() }}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input value="{{ old('name',$getRecord->name) }}" name="name" type="text" class="form-control" placeholder="Enter Name" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input value="{{ old('email',$getRecord->email) }}" name="email" type="email" class="form-control" placeholder="Enter Email" required>
+                    <div style="color: red;">{{ $errors->first('email') }}</div>
+                  </div>
+    
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Temp</button>
+                </div>
+              </form>
             </div>
             <!-- /.card -->
           </div>
