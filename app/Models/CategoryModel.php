@@ -46,11 +46,11 @@ class CategoryModel extends Model
         ->get();
     }
 
-    // public function getSubCategory()
-    // {
-    //     return $this->hasMany(SubCategory::class, 'category_id')
-    //                 ->where('sub_categories.is_delete','=',0)
-    //                 ->where('sub_categories.status','=',0);
-    // }
+    public function getSubCategory()
+    {
+        return $this->hasMany(SubCategory::class, 'category_id')
+                    ->where('sub_categories.is_delete','=',0)
+                    ->where('sub_categories.status','=',0);
+    }
 
 }

@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1>Add New Brand</h1>
+            <h1>Add New Category</h1>
           </div>  
         </div>
       </div><!-- /.container-fluid -->
@@ -29,8 +29,8 @@
                 {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Brand Name <span style="color: red;">*</span> </label>
-                    <input name="name" type="text" class="form-control" placeholder="Brand Name" value="{{ old('name') }}" required>
+                    <label>Category Name <span style="color: red;">*</span> </label>
+                    <input name="name" type="text" class="form-control" placeholder="Category Name" value="{{ old('name') }}" required>
                   </div>
 
                   <div class="form-group">

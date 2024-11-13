@@ -42,11 +42,11 @@ class SubCategory extends Model
                 ->where('sub_categories.status','=',0)->first();
     }
 
-    // public function totalProducts()
-    // {
-    //     return $this->hasMany(Product::class, 'sub_category_id')
-    //         ->where('is_delete', 0)
-    //         ->where('status', 0)
-    //         ->count();
-    // }
+    public function totalProducts()
+    {
+        return $this->hasMany(Product::class, 'sub_category_id')
+            ->where('is_delete', 0)
+            ->where('status', 0)
+            ->count();
+    }
 }

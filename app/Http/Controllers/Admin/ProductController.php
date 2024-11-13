@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
-use App\Models\Category;
+use App\Models\CategoryModel as Category;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\ProductColor;

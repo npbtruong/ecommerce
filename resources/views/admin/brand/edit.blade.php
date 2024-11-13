@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1>Add New Brand</h1>
+            <h1>Edit Brand</h1>
           </div>  
         </div>
       </div><!-- /.container-fluid -->
@@ -30,20 +30,20 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label>Brand Name <span style="color: red;">*</span> </label>
-                    <input name="name" type="text" class="form-control" placeholder="Brand Name" value="{{ old('name') }}" required>
+                    <input name="name" type="text" class="form-control" placeholder="Brand Name" value="{{ old('name', $getRecord->name) }}" required>
                   </div>
 
                   <div class="form-group">
                     <label>Slug <span style="color: red;">*</span> </label>
-                    <input name="slug" type="text" class="form-control" placeholder="Slug Ex. URL" value="{{ old('slug') }}" required>
+                    <input name="slug" type="text" class="form-control" placeholder="Slug Ex. URL" value="{{ old('slug',$getRecord->slug) }}" required>
                     <div style="color: red;">{{ $errors->first('slug') }}</div>
                   </div>
                   
                   <div class="form-group">
                     <label>Status <span style="color: red;">*</span> </label>
                     <select name="status" class="form-control" required>
-                      <option {{ (old('status') == 0) ? 'selected':'' }} value="0">Active</option>
-                      <option {{ (old('status') == 1) ? 'selected':'' }} value="1">InActive</option>
+                      <option {{ (old('status',$getRecord->status) == 0) ? 'selected':'' }} value="0">Active</option>
+                      <option {{ (old('status',$getRecord->status) == 1) ? 'selected':'' }} value="1">InActive</option>
                     </select>
                   </div>
 
@@ -51,17 +51,17 @@
 
                     <div class="form-group">
                         <label>Meta title <span style="color: red;">*</span> </label>
-                        <input name="meta_title" type="text" class="form-control" placeholder="Meta title" value="{{ old('meta_title') }}" required>
+                        <input name="meta_title" type="text" class="form-control" placeholder="Meta title" value="{{ old('meta_title',$getRecord->meta_title) }}" required>
                     </div>
 
                     <div class="form-group">
                         <label>Meta Description</label>
-                        <textarea name="meta_description" placeholder="Meta Description" class="form-control" cols="30" rows="10">{{ old('meta_description') }}</textarea>
+                        <textarea name="meta_description" placeholder="Meta Description" class="form-control" cols="30" rows="10">{{ old('meta_description',$getRecord->meta_description) }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label>Meta Keyswords</label>
-                        <input name="meta_keywords" type="text" class="form-control" placeholder="Meta Keywords" value="{{ old('meta_keywords') }}" >
+                        <input name="meta_keywords" type="text" class="form-control" placeholder="Meta Keywords" value="{{ old('meta_keywords',$getRecord->meta_keywords) }}" >
                     </div>
 
 
@@ -69,7 +69,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>
