@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1>Add New Color</h1>
+            <h1>Edit color</h1>
           </div>  
         </div>
       </div><!-- /.container-fluid -->
@@ -29,21 +29,20 @@
                 {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Brand Name <span style="color: red;">*</span> </label>
-                    <input name="name" type="text" class="form-control" placeholder="Color Name" value="{{ old('name') }}" required>
+                    <label>Name <span style="color: red;">*</span> </label>
+                    <input name="name" type="text" class="form-control" placeholder="Name" value="{{ old('name', $getRecord->name) }}" required>
                   </div>
 
                   <div class="form-group">
                     <label>Code <span style="color: red;">*</span> </label>
-                    <input name="code" type="color" class="form-control" placeholder="Code" value="{{ old('code') }}" required>
+                    <input name="code" type="color" class="form-control" placeholder="Code" value="{{ old('code', $getRecord->code) }}" required>
                   </div>
-
                   
                   <div class="form-group">
                     <label>Status <span style="color: red;">*</span> </label>
                     <select name="status" class="form-control" required>
-                      <option {{ (old('status') == 0) ? 'selected':'' }} value="0">Active</option>
-                      <option {{ (old('status') == 1) ? 'selected':'' }} value="1">InActive</option>
+                      <option {{ (old('status',$getRecord->status) == 0) ? 'selected':'' }} value="0">Active</option>
+                      <option {{ (old('status',$getRecord->status) == 1) ? 'selected':'' }} value="1">InActive</option>
                     </select>
                   </div>
 
@@ -51,7 +50,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>
