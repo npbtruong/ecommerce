@@ -104,4 +104,5 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/color/edit/{id}',[ColorController::class,'update']);
     Route::get('admin/color/delete/{id}',[ColorController::class,'delete']);
     
+    
 });
